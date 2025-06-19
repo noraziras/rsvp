@@ -81,7 +81,7 @@
 
         
         .couple-names {
-            font-size: 2.6rem;
+            font-size: 2.2rem;
             font-weight: 300;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -89,7 +89,7 @@
         }
 
         .salam-sentence{
-            font-size: 2.0rem;
+            font-size: 1.8rem;
             font-weight: 300;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -97,7 +97,7 @@
         }
 
         .salam{
-            font-size: 2.5rem;
+            font-size: 2.0rem;
             font-weight: 300;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -109,6 +109,12 @@
             margin-bottom: 30px;
             opacity: 0.9;
         }
+
+       .lead-title{
+                font-size: 1.0rem;
+                margin-bottom: 30px;
+                opacity: 0.9;
+            }
         
         .scroll-indicator {
             position: absolute;
@@ -141,14 +147,14 @@
         }
         
         .event-title {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.3rem;
+            font-weight: 500;
             margin-bottom: 15px;
             color: #333;
         }
         
         .event-infos {
-            font-size: 1.1rem;
+            font-size: 0.8rem;
             color: #666;
             line-height: 1.8;
         }
@@ -270,7 +276,7 @@
         
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             font-weight: 300;
             margin-bottom: 50px;
             color: #333;
@@ -303,7 +309,7 @@
             display: flex;
             justify-content: center;
             text-align: center;
-            font-size: 1.3rem;
+            font-size: 1.0rem;
             font-weight: 700;
         }
 
@@ -312,7 +318,7 @@
             display: flex;
             justify-content: center;
             text-align: center;
-            font-size: 1.0rem;
+            font-size: 0.8rem;
             font-weight: 400;
             font-style: italic;
             text-wrap: wrap;
@@ -332,7 +338,7 @@
         .bismillah-img{
             display: flex;
             justify-content: center;
-            height: 100px;
+            height: 90px;
         }
 
         
@@ -688,7 +694,7 @@
 }
 
 .sticky-footer span.icon-label {
-  font-size: 15px;
+  font-size: 12px;
   font-family: "Playfair Display", serif;
   text-decoration: none;
   font-weight: bold;
