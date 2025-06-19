@@ -180,8 +180,8 @@ document.getElementById('cancelBtn').addEventListener('click', function() {
         $(document).ready(function() {
             let calendarCurrentMonth = 8; // September (0-indexed)
             let calendarCurrentYear = 2025;
-            const calendarPublicHoliday = new Date(2025, 8, 5); // September 5, 2025 - Hari Maulidur Rasul
-            const calendarPublicHoliday2 = new Date(2025, 8, 16); // September 5, 2025 - Hari Malaysia
+            //const calendarPublicHoliday = new Date(2025, 8, 5); // September 5, 2025 - Hari Maulidur Rasul
+            //const calendarPublicHoliday2 = new Date(2025, 8, 16); // September 5, 2025 - Hari Malaysia
             const calendarWeddingDate = new Date(2025, 8, 6); // September 6, 2025
             const calendarToday = new Date();
 
@@ -228,25 +228,25 @@ document.getElementById('cancelBtn').addEventListener('click', function() {
                     }
 
                     // Check if it's a public holiday (Hari Maulidur Rasul)
-                    if (currentDate.toDateString() === calendarPublicHoliday.toDateString()) {
+                   /* if (currentDate.toDateString() === calendarPublicHoliday.toDateString()) {
                         dayElement.addClass('public-holiday');
                         const holidayLabel = $('<div class="event-label holiday-label"></div>');
                         dayElement.append(holidayLabel);
                         
                         // Add tooltip or title for more information
                         dayElement.attr('title', 'Hari Maulidur Rasul (Public Holiday)');
-                    }
+                    }*/
 
                     
                     // Check if it's a public holiday (Hari Malaysia)
-                    if (currentDate.toDateString() === calendarPublicHoliday2.toDateString()) {
+                  /*  if (currentDate.toDateString() === calendarPublicHoliday2.toDateString()) {
                         dayElement.addClass('public-holiday');
                         const holidayLabel = $('<div class="event-label holiday-label"></div>');
                         dayElement.append(holidayLabel);
                         
                         // Add tooltip or title for more information
                         dayElement.attr('title', 'Hari Malaysia (Public Holiday)');
-                    }
+                    }*/
 
                     // Check if it's the wedding date
                     if (currentDate.toDateString() === calendarWeddingDate.toDateString()) {
