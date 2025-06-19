@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding RSVP - Azira & Nizam</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+   
+    <!--CSS FILE-->
+    <link rel="stylesheet" type="text/css" href="style.css">   
+</head>
+
+<body>
+
+   
+  
+    <!-- Fixed Navigation -->
+    <nav class="fixed-nav">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="nav-brand">Azira & Nizam</div>
+                <div class="nav-links d-none d-md-flex">
+                    <a href="#home">Utama</a>
+                    <a href="#details">Butiran Majlis</a>
+                    <a href="#galeri">Galeri</a>
+                    <a href="#wishes">Ucapan & Doa</a>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="section hero-section">
+        <div class="container">
+            <div class="hero-content">
+
+                <h1 class="salam">WALIMATULURUS</h1>
+                <h1 class="salam-sentence">السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</h1>
+                <h1 class="couple-names">Azira & Nizam</h1>
+                <p class="wedding-date">06 September 2025 • Dewan Lakis, Sibu</p>
+                <p class="lead">Dengan penuh kesyukuran, kami menjemput Tuan/Puan ke majlis perkahwinan kami</p>
+
+       
+                
+                <div class="scroll-indicator">
+                    <i class="fas fa-chevron-down fa-2x"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Event Details Section -->
+    <section id="details" class="section">
+        <div class="container">
+            <h2 class="section-title">Butiran Majlis</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="event-card">
+                        <div class="event-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="event-title">Maklumat Majlis Resepsi</h3>
+                        <div class="event-infos">
+                            <p><i class="fas fa-calendar-alt"></i> <strong>Tarikh:</strong> 06 September 2025 (Sabtu) </p>
+                            <p><i class="fas fa-calendar-alt"></i> <strong>Bersamaan:</strong> 14 Rabiulawal 1447H</p>
+                            <p><i class="fas fa-clock"></i> <strong>Masa:</strong> 10:00 AM - 01:30 pM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> <strong>Tempat:</strong> Dewan Lakis, Sibu</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="event-card">
+                        <div class="event-icon">
+                            <i class="bi bi-card-list"></i>
+                        </div>
+                        <h3 class="event-title">Aturcara Majlis</h3>
+                        <div class="event-infos">
+                            <p><i class="bi bi-people-fill"></i> <strong>Ketibaan Tetamu:</strong> 10:00 AM</p>
+                            <p><i class="bi bi-balloon-heart-fill"></i> <strong>Ketibaan Pengantin:</strong> 11:00 AM</p>
+                            <p><i class="bi bi-person-raised-hand"></i> <strong>Majlis Tamat:</strong> 01:30 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+     <section id="galeri" class="section">
+        <div class="container">
+            <h2 class="section-title">Galeri</h2>
+            <div class="gallery-container">
+                <div class="main-slider">
+                    <div class="slide active" data-bg="img/img1.jpg">
+                        <img src="img/img1.jpg" alt="Image 1">
+                    </div>
+                    <div class="slide" data-bg="img/img2.jpg">
+                        <img src="img/img2.jpg" alt="Image 2">
+                    </div>
+                    <div class="slide" data-bg="img/img3.jpg">
+                        <img src="img/img3.jpg" alt="Image 3">
+                    </div>
+                    <div class="slide" data-bg="img/img4.jpg">
+                        <img src="img/img4.jpg" alt="Image 4">
+                    </div>
+                    <div class="slide" data-bg="img/img5.jpg">
+                        <img src="img/img5.jpg" alt="Image 5">
+                    </div>
+                    <div class="slide" data-bg="img/img6.jpg">
+                        <img src="img/img6.jpg" alt="Image 6">
+                    </div>
+                    
+                    <button class="slider-controls prev" onclick="changeSlide(-1)">‹</button>
+                    <button class="slider-controls next" onclick="changeSlide(1)">›</button>
+                    
+                    <div class="slide-counter">
+                        <span id="current-slide">1</span> / <span id="total-slides">6</span>
+                    </div>
+                    
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                
+                <div class="thumbnail-container">
+                    <div class="thumbnail active" onclick="goToSlide(0)">
+                        <img src="img/img1.jpg" alt="Thumbnail 1">
+                    </div>
+                    <div class="thumbnail" onclick="goToSlide(1)">
+                        <img src="img/img2.jpg" alt="Thumbnail 2">
+                    </div>
+                    <div class="thumbnail" onclick="goToSlide(2)">
+                        <img src="img/img3.jpg" alt="Thumbnail 3">
+                    </div>
+                    <div class="thumbnail" onclick="goToSlide(3)">
+                        <img src="img/img4.jpg" alt="Thumbnail 4">
+                    </div>
+                    <div class="thumbnail" onclick="goToSlide(4)">
+                        <img src="img/img5.jpg" alt="Thumbnail 5">
+                    </div>
+                    <div class="thumbnail" onclick="goToSlide(5)">
+                        <img src="img/img6.jpg" alt="Thumbnail 6">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Ucapan Section -->
+    <section id="wishes" class="section">
+        <div class="container">
+            <h2 class="section-title">Ucapan & Doa</h2>
+
+            <div id="rsvp-list">
+                <!-- Cards will be generated here by JavaScript -->
+            </div><br>
+
+            <div class="doa-list" >
+                <div class="bismillah-img">
+                    <img src="img/bismillah-img.png">
+                </div>
+                <h5 class="opening-doa">Dengan nama Allah Yang Maha Pengasih Lagi Maha Penyayang</h5>
+                <div class="doa-contain">
+                    <p>“Ya Allah Ya Tuhan Kami, Satukanlah kedua mempelai ini,</p>
+                </div>
+                <div class="doa-nm"> Azira & Nizam </div>
+                <div class="doa-contain">
+                    <p>dengan keimanan dan ketaqwaan kepadaMu, jadikanlah mereka pasangan yang sentiasa berkasih sayang dan yang melaksanakan syariat agamaMu, dalam membentuk keluarga sakinah mawaddah, 
+                    warrahmah serta kurniakan mereka zuriat yang beriman, bertaqwa, beramal soleh, serta cukupkan rezeki mereka dan semoga perkahwinan mereka dilimpahi rahmatMu sehingga syurga”</p>
+                </div>
+                
+            </div>
+
+                <h2 class="section-title">Countdown</h2>
+                          <!-- Countdown Timer -->
+                <div class="countdown-container">
+                    <div class="countdown-timer">
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="days">00</div>
+                            <div class="countdown-label">Hari</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="hours">00</div>
+                            <div class="countdown-label">Jam</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="minutes">00</div>
+                            <div class="countdown-label">Minit</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number" id="seconds">00</div>
+                            <div class="countdown-label">Saat</div>
+                        </div>
+                    </div>
+                </div>
+             
+
+        </div>
+    </section>
+
+
+<!-------------------------------------------------------------------------------------------MODAL SECTION--------------------------------------------------------------------->
+<!-- RSVP Modal -->
+<div class="modal fade" id="RSVP-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content" id="modal-main-content">
+      <div class="modal-header">
+        <h2 class="modal-title">RSVP <i class="bi bi-pencil-square"></i></h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModal" onclick="clearForm()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        
+         <div class="container">
+           
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <!-- Success Alert -->
+                    <div id="successAlert" class="alert alert-success alert-dismissible fade" role="alert" style="display:none;">
+                        <strong>Berjaya!</strong> Terima kasih atas pengesahan kehadiran anda! 😊💖
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <!-- Bootstrap Failed Alert -->
+                    <div id="failedAlert" class="alert alert-danger alert-dismissible fade" role="alert" style="display:none;">
+                        <strong>Ralat!</strong> Sila cuba lagi 😢
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    
+                    <div class="rsvp-form">
+                       <form id="rsvpForm" action="https://docs.google.com/forms/d/10CdU33XE9sFJ_MywngVfrRhu2V35Epaf7lAoxuVPvRE/formResponse" method="POST" target="hidden_iframe">
+                        
+                            <div class="row">
+                                
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="fullName">Nama *</label>
+                                        <input type="text" class="form-control" id="fullName" name="entry.1807765128" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="phone">Nombor Telefon *</label>
+                                        <input type="tel" class="form-control" id="phone" name="entry.1282032510" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Adakah anda akan hadir? *</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="entry.773564751" id="attendYes" value="Hadir" required>
+                                    <label class="form-check-label" for="attendYes">
+                                        Ya, saya akan hadir 😊
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="entry.773564751" id="attendNo" value="Tidak Hadir" required>
+                                    <label class="form-check-label" for="attendNo">
+                                        Tidak dapat hadir 😢
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="guestCount">Jumlah Dewasa (Termasuk anda):</label>
+                                        <select class="form-control" id="guestCount" name="entry.364572996">
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="kidCount">Jumlah Kanak-kanak (1-17 tahun)</label>
+                                        <select class="form-control" id="dietary" name="entry.399887672">
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Ucapan untuk pengantin (pilihan)</label>
+                                <textarea class="form-control" id="message" rows="4" placeholder="Kongsi ucapan bahagia untuk kami! 💕" name="entry.442184487"></textarea>
+                            </div>
+                            
+                            <div class="mobile-button-container">
+                                <button type="submit" class="btn btn-rsvp btn-lg">
+                                    <i class="fas fa-paper-plane"></i> Hantar RSVP
+                                </button>
+                                <button type="button" class="btn btn-cancel btn-lg" id="cancelBtn">
+                                    <i class="fas fa-times"></i> Reset
+                                </button>
+
+                              
+                            </div>
+                        </form>
+                        <iframe name="hidden_iframe" style="display:none;"></iframe> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+      </div><!--END OF DIV CLASS MODAL BODY-->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        <!--<button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Close</button>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Calendar Modal -->
+     <div class="modal fade" id="Calendar-Modal" tabindex="-1" role="dialog" aria-labelledby="calendarModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="calendarModalTitle">
+                         Save Our Walimatulurus Date <i class="bi bi-journal-check"></i>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <!-- Calendar Display -->
+                        <div class="calendar-container">
+                            <div class="calendar-nav">
+                                <button onclick="changeMonth(-1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <div class="calendar-month-year" id="monthYear">
+                                    Sep 2025
+                                </div>
+                                <button onclick="changeMonth(1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="calendar-grid" id="calendarGrid">
+                                <!-- Calendar will be generated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <!-- Add to Calendar Buttons -->
+                        <div class="text-center">
+                            <h6 class="mb-3">Add to your calendar:</h6>
+                            <div class="calendar-buttons">
+                                <a href="#" class="btn-calendar btn-google" id="googleCalendar">
+                                    <i class="fab fa-google"></i>
+                                    Google Calendar
+                                </a>
+                                <a href="#" class="btn-calendar btn-apple" id="appleCalendar">
+                                    <i class="fab fa-apple"></i>
+                                    Apple Calendar
+                                </a>
+                                <a href="#" class="btn-calendar btn-outlook" id="outlookCalendar">
+                                    <i class="fas fa-envelope"></i>
+                                    Outlook
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    <!--<button type="button" class="btn btn-primary" onclick="shareEvent()">
+                        <i class="fas fa-share-alt"></i> Share Event-->
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Contact Modal -->
+<div class="modal fade" id="Contact-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Maklumat Tambahan <i class="bi bi-info-circle"></i></h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div class="container">
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="fas fa-tshirt"></i>
+                    <h4>Dress Code</h4>
+                    <p>Pakaian yang sopan</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-car"></i>
+                    <h4>Parking</h4>
+                    <p>Tempat letak kereta tersedia di hadapan dewan</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-gift"></i>
+                    <h4>Hadiah</h4>
+                    <p>Kehadiran anda sudah cukup bermakna. Jika ingin memberi hadiah, kami sangat hargai</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <h4>Hubungi</h4>
+                    <p>Sebarang pertanyaan, hubungi:<br>
+                    Pihak Pengantin Perempuan:<br>
+                    <a href="tel:+60111989668">011-19896680</a><br> 
+                    Pihak Pengantin Lelaki:<br>
+                    <a href="tel:+60129876543">012-987-6543</a></p>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Location Modal -->
+<div class="modal fade" id="Location-Modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Lokasi Majlis <i class="bi bi-geo-alt"></i></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="map-container">
+                        <div class="map-info mb-4 text-center sentence-text">
+                            <p><i class="fas fa-map-marker-alt text-danger"></i> Dewan Lakis Sibu</p>
+                            <p class="lead">Jalan Masjid, Pekan Sibu, 96000 Sibu, Sarawak</p>
+                            <div class="d-flex justify-content-center flex-wrap gap-3 mt-3">
+                                <a href="https://www.google.com/maps/dir//LAKIS+Hall,+Jalan+Masjid,+Sibu,+96000+Sibu,+Sarawak/@2.296146,111.8207272,21z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31f77fcf5b93397d:0x86fc39b2c837b215!2m2!1d111.8210442!2d2.2962856?entry=ttu&g_ep=EgoyMDI1MDYxMC4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-outline-primary">
+                                    <i class="fas fa-directions"></i> Dapatkan Arah
+                                </a>
+                                <a href="https://waze.com/ul/YOUR_WAZE_LINK" target="_blank" class="btn btn-outline-success">
+                                    <i class="fab fa-waze"></i> Buka di Waze
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Google Maps Embed -->
+                        <div class="map-embed">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249.1634290353898!2d111.82072721745911!3d2.296146000006806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31f77fcf5b93397d%3A0x86fc39b2c837b215!2sLAKIS%20Hall!5e0!3m2!1sen!2smy!4v1749791362329!5m2!1sen!2smy"
+                                width="100%" 
+                                height="400" 
+                                style="border:0; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                       
+                        <!-- Additional Location Info -->
+                        <div class="location-details mt-4">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="detail-card">
+                                        <i class="fas fa-car text-primary"></i>
+                                        <h5>Parking</h5>
+                                        <p>Tempat letak kereta tersedia di sekeliling dewan</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="detail-card">
+                                        <i class="fas fa-info-circle text-info"></i>
+                                        <h5>Petunjuk</h5>
+                                        <p>Dalam perkarangan masjid An-Nur</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Money Modal -->
+<div class="modal fade" id="Money-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Money Gift <i class="bi bi-coin"></i></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div class="container">
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="bi bi-cash-coin"></i>
+                    <h5>Nama Bank</h5>
+                    <p>Malayan Banking Berhad (Maybank)</p>
+
+                    <h5>No. Akaun</h5>
+                    <p class="account-number-simple">
+                        561015144105  
+                    </p>
+
+                    <div class="img-code">
+                    <h5>QR Code</h5>
+                    <img src="img/qr-code.jpg">
+                    </div>
+                </div>
+               
+                
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+     
+    <div class="sticky-footer">
+        <a href="#" data-toggle="modal" data-target="#RSVP-Modal"><p class="icon">📩</p><span class="icon-label">RSVP</span></a>
+        <a href="#" data-toggle="modal" data-target="#Calendar-Modal"><p class="icon">🗓️</p><span class="icon-label">Kalendar</span></a>
+        <a href="#" data-toggle="modal" data-target="#Location-Modal" ><p class="icon">📌</p><span class="icon-label">Lokasi</span></a>
+        <a href="#" data-toggle="modal" data-target="#Contact-Modal"><p class="icon">📃</p><span class="icon-label">Maklumat Tambahan</span></a>
+        <a href="#" data-toggle="modal" data-target="#Money-Modal" ><p class="icon">💵</p><span class="icon-label">Money Gift</span></a>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+   
+</body>
+</html>

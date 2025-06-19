@@ -1,0 +1,1147 @@
+  * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            padding-top: 80px; /* Space for fixed navigation */
+        }
+        
+        /* Fixed Navigation */
+        .fixed-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d4625c;
+        }
+        
+        .nav-links a {
+            margin: 0 15px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #d4625c;
+            text-decoration: none;
+        }
+        
+        /* Sections */
+        .section {
+            min-height: 100vh;
+            padding: 80px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #d4625c 0%, #f4a6a0 100%);
+            color: #36454F;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>') repeat;
+            background-size: 50px 50px;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        
+        .couple-names {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: #36454F;
+        }
+
+        .salam-sentence{
+            font-size: 4.0rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: #36454F;
+        }
+
+        .salam{
+            font-size: 4.2rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: #36454F;
+        }
+
+        
+        
+        .wedding-date {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        
+        /* Event Details */
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-left: 5px solid #d4625c;
+        }
+        
+        .event-icon {
+            font-size: 2rem;
+            color: #d4625c;
+            margin-bottom: 20px;
+        }
+        
+        .event-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .event-infos {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* RSVP Form */
+        .rsvp-form {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .form-control {
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            padding: 5px 10px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: #d4625c;
+            box-shadow: 0 0 0 0.2rem rgba(212, 98, 92, 0.25);
+        }
+        
+        .btn-rsvp {
+            background: linear-gradient(135deg, #d4625c 0%, #f4a6a0 100%);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            color: white;
+        }
+        
+        .btn-rsvp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 98, 92, 0.4);
+            color: white;
+        }
+
+         .btn-cancel {
+            background: #6c757d;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            color: white;
+        }
+        
+        .btn-cancel:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+            color: white;
+        }
+
+         /* Mobile button styling - side by side */
+        .mobile-button-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .mobile-button-container .btn {
+            flex: 1;
+            min-width: 120px;
+            max-width: 200px;
+        }
+
+         /* For very small screens, ensure buttons don't get too narrow */
+        @media (max-width: 350px) {
+            .mobile-button-container {
+                flex-direction: column;
+            }
+            
+            .mobile-button-container .btn {
+                flex: none;
+                width: 100%;
+                max-width: none;
+            }
+        }
+        
+        /* Additional Info */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .info-item {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .info-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .info-item i {
+            font-size: 2.5rem;
+            color: #d4625c;
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 50px;
+            color: #333;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #d4625c;
+            border-radius: 2px;
+        }
+
+        .doa-list {
+            border-top: 1px solid #A95C68;   /* You can change color and thickness */
+            border-bottom: 1px solid #A95C68;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .opening-doa {
+            color: #36454F;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .doa-contain{
+            color: #36454F;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-size: 1.0rem;
+            font-weight: 400;
+            font-style: italic;
+            text-wrap: wrap;
+        }
+
+        .doa-nm {
+            color: #d4625c;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-size: 2.0rem; 
+            font-family: "Dancing Script", cursive;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .bismillah-img{
+            display: flex;
+            justify-content: center;
+            height: 100px;
+        }
+
+        
+        
+        /* Success Alert */
+        .alert-success {
+            border-radius: 10px;
+            border: none;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+        }
+
+        /* Countdown Timer Styles */
+        .countdown-container {
+            margin: 40px 0;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            min-width: 80px;
+            border: 2px solid rgba(49, 48, 48, 0.3);
+            transition: transform 0.3s;
+           
+        }
+        
+        .countdown-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #36454F;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .countdown-label {
+            font-size: 0.9rem;
+            color: #36454F(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        
+        /* Calendar Buttons */
+        .calendar-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-calendar {
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-google {
+            background: #6082B6;
+            color: white;
+        }
+        
+        .btn-google:hover {
+            background: #4285f4;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(66, 133, 244, 0.4);
+        }
+        
+        .btn-outlook {
+            background: #4682B4;
+            color: white;
+        }
+        
+        .btn-outlook:hover {
+            background: #0078d7;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 120, 215, 0.4);
+        }
+        
+        .btn-ics {
+            background:#708090;
+            color: white;
+        }
+        
+        .btn-ics:hover {
+            background: #6c757d;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .couple-names {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+                min-height: auto;
+            }
+            
+            .event-card, .rsvp-form {
+                padding: 25px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+
+              /* Map Section Styles */
+        .map-container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .map-info h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .map-embed {
+            margin: 30px 0;
+        }
+
+         /* Mobile responsiveness for countdown */
+        @media (max-width: 576px) {
+            .countdown-item {
+                min-width: 70px;
+                padding: 15px;
+            }
+            
+            .countdown-number {
+                font-size: 2rem;
+            }
+            
+            .calendar-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-calendar {
+                width: 80%;
+                max-width: 280px;
+            }
+        }
+
+     
+}
+
+   /*Phone clickable Hover*/
+
+        a[href^="tel:"] {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a[href^="tel:"]:hover {
+            text-decoration: underline;
+            color: #ee0020;
+        }
+
+       
+  /* CSS for Ucapan Slider */
+        .wishes-slider {
+            max-width: 400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .wish-slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .wish-slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .wish-card {
+            background: rgb(248, 241, 241);
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .wish-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .wish-header {
+            background: linear-gradient(135deg, #e17055 0%, #d63031 100%);
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        .wish-title {
+            color: white;
+            margin: 0;
+            font-size: 1.5em;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .wish-content {
+            padding: 30px 20px;
+            text-align: center;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .wish-message {
+            color: #333;
+            margin: 0 0 15px 0;
+            font-size: 1.1em;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        .wish-name {
+            color: #666;
+            margin: 0;
+            font-size: 0.95em;
+            font-weight: 600;
+        }
+
+        /* Slider dots */
+        .slider-dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active,
+        .dot:hover {
+            background-color: #e17055;
+        }
+
+/* Slider counter */
+.slider-counter {
+  text-align: center;
+  margin-top: 10px;
+  color: #666;
+  font-size: 0.9em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .wishes-slider {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  .wish-content {
+    padding: 20px 15px;
+    min-height: 100px;
+  }
+  
+  .wish-message {
+    font-size: 1em;
+  }
+}
+
+/*TAB CSS*/
+.sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 793px; /* match your A6 max width */
+  background: rgba(255, 255, 255, 0.1); /* transparent white */
+  backdrop-filter: blur(8px); /* blurred background */
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 999;
+}
+
+
+.sticky-footer a {
+  color: #36454F;
+  text-decoration: none;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sticky-footer a:focus,
+.sticky-footer a:hover,
+.sticky-footer a:active {
+  color: #9e9898;
+  text-decoration: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.sticky-footer p.icon {
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+
+.sticky-footer span.icon-label {
+  font-size: 15px;
+  font-family: "Playfair Display", serif;
+  text-decoration: none;
+  font-weight: bold;
+ 
+}
+
+@media (max-width: 768px) {
+  .sticky-footer {
+    max-width: 100%;
+    padding: 8px 0;
+    border-radius: 0; /* remove rounded corners on smaller screens */
+  }
+  
+  .sticky-footer p.icon {
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+  
+  .sticky-footer span.icon-label {
+    font-size: 12px;
+  }
+}
+
+
+ /* Calendar Styling */
+      .calendar-container {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .calendar-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .calendar-month-year {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .calendar-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .calendar-nav button {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: #666;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .calendar-nav button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .calendar-day-header {
+            text-align: center;
+            font-weight: bold;
+            color: #666;
+            padding: 10px 5px;
+            font-size: 0.9rem;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            position: relative;
+            min-height: 30px;
+            font-size: 1.0rem; /* add this to make text smaller */
+        }
+
+        .calendar-day:hover {
+            background-color: #f0f0f0;
+        }
+
+        .calendar-day.other-month {
+            color: #ccc;
+        }
+
+        .calendar-day.today {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .calendar-day.wedding-day {
+            background-color: #F3E5AB;
+            color: white;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .calendar-day.wedding-day::after {
+            content: '💍';
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            font-size: 20px;
+        }
+
+        /* Public holiday styling */
+        .calendar-day.public-holiday {
+            background-color: #f0d6d6;
+            color: #E37383;
+            font-weight: bold;
+            position: relative;
+        }
+         .calendar-day.public-holiday::after {
+            content: 'PH';
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            font-size: 15px;
+            color: #C41E3A;
+        }
+
+
+        /* Tooltip styling for better holiday information display */
+        .calendar-day[title] {
+            cursor: help;
+        }
+
+        .event-details {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .event-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .event-info i {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .calendar-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-calendar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-google {
+            background: #4285f4;
+            color: white;
+        }
+
+        .btn-google:hover {
+            background: #3367d6;
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-apple {
+            background: #000;
+            color: white;
+        }
+
+        .btn-apple:hover {
+            background: #333;
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-outlook {
+            background: #0078d4;
+            color: white;
+        }
+
+        .btn-outlook:hover {
+            background: #106ebe;
+            color: white;
+            text-decoration: none;
+        }
+
+        .modal-header {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .modal-footer {
+            border-top: none;
+            padding-top: 0;
+        }
+
+        @media (max-width: 576px) {
+            .calendar-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .btn-calendar {
+                justify-content: center;
+            }
+        }
+        
+
+        /*Modal Money CSS*/
+
+        .img-code img{
+            border-radius: 20px;
+            width: 300px;
+        }
+
+        
+ /*GALLERY SLIDES CSS*/    
+ .gallery-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgb(201, 169, 166);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .main-slider {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        /* Replace your existing .slide and .slide img styles with these */
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background-image: inherit;
+            background-size: cover;
+            background-position: center;
+            filter: blur(15px);
+            z-index: 1;
+        }
+
+        .slide img {
+            position: relative;
+            z-index: 2;
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+                
+
+        .thumbnail-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.1);
+            border-color: #C9A9A6;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .thumbnail.active {
+            border-color: 	#C9A9A6;
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgb(227, 115, 131);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .thumbnail:hover img {
+            transform: scale(1.1);
+        }
+
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgb(227, 115, 131);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            z-index: 100; /* Increased z-index to ensure buttons stay on top */
+        }
+
+        .slider-controls:hover {
+            background: rgb(250, 160, 160);
+            transform: translateY(-50%) scale(1.1);
+        }
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        /* Also update the slide counter z-index */
+        .slide-counter {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            backdrop-filter: blur(10px);
+            z-index: 100; /* Increased z-index */
+        }
+
+        
+         
+
+
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: #A95C68;
+            transition: width 0.1s ease;
+            border-radius: 0 0 15px 15px;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .main-slider {
+                height: 300px;
+            }
+            
+            .thumbnail {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .slider-controls {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+        }  
+
+        .modal-title{
+            font-size: 1.3rem;
+            font-family: "Playfair Display", serif;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        .sentence-text p {
+            font-size: 1.0rem;
+            text-decoration: none;
+            font-weight: 700;
+        }
+      
+        
+ 
