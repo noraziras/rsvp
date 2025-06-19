@@ -814,7 +814,7 @@
         }
 
         /* Public holiday styling */
-        .calendar-day.public-holiday {
+        /*.calendar-day.public-holiday {
             background-color: #f0d6d6;
             color: #E37383;
             font-weight: bold;
@@ -827,7 +827,7 @@
             right: -2px;
             font-size: 15px;
             color: #C41E3A;
-        }
+        }*/
 
 
         /* Tooltip styling for better holiday information display */
