@@ -168,9 +168,10 @@
         }
         
         .form-group label {
-            font-weight: 600;
+            font-weight: 400;
             color: #333;
             margin-bottom: 8px;
+            font-size: 0.8rem;
         }
         
         .form-control {
@@ -188,9 +189,9 @@
         .btn-rsvp {
             background: linear-gradient(135deg, #d4625c 0%, #f4a6a0 100%);
             border: none;
-            padding: 15px 40px;
+            padding: 10px 20px;
             border-radius: 50px;
-            font-weight: 600;
+            font-weight: 400;
             font-size: 0.9rem;
             transition: all 0.3s;
             color: white;
@@ -205,7 +206,7 @@
          .btn-cancel {
             background: #6c757d;
             border: none;
-            padding: 15px 40px;
+            padding: 10px 20px;
             border-radius: 50px;
             font-weight: 600;
             font-size: 0.9rem;
