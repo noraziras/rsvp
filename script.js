@@ -642,25 +642,25 @@ class GuestbookCarousel {
                 this.track.innerHTML = `
                     <div class="carousel-slide">
                         <div class="message-card">
-                            <div class="wish-header">Loading...</div>
+                            <div class="wish-header">Sedang Memuatkan...</div>
                             <div class="message-text">
-                                <em>Loading beautiful wishes from our guests... 💫</em>
+                                <em>Sedang memuatkan ucapan indah daripada tetamu... 💫</em>
                             </div>
-                            <div class="message-author">@Please_Wait</div>
+                            <div class="message-author">@Sila_Tunggu</div>
                         </div>
                         <div class="message-card">
-                            <div class="wish-header">Loading...</div>
+                            <div class="wish-header">Sedang Memuatkan...</div>
                             <div class="message-text">
-                                <em>Fetching heartfelt messages... 💝</em>
+                                <em>Mengambil ucapan yang penuh kasih sayang... 💝</em>
                             </div>
-                            <div class="message-author">@Almost_Ready</div>
+                            <div class="message-author">@Hampir_Siap</div>
                         </div>
                         <div class="message-card">
-                            <div class="wish-header">Loading...</div>
+                            <div class="wish-header">Sedang Memuatkan...</div>
                             <div class="message-text">
-                                <em>Preparing your guestbook... 🎉</em>
+                                <em>Menyediakan ucapan tetamu untuk anda... 🎉</em>
                             </div>
-                            <div class="message-author">@Loading_Love</div>
+                            <div class="message-author">@Memuatkan_love</div>
                         </div>
                     </div>
                 `;
@@ -668,27 +668,27 @@ class GuestbookCarousel {
             
             showErrorState3() {
                 this.track.innerHTML = `
-                    <div class="carousel-slide">
+                       <div class="carousel-slide">
                         <div class="message-card" style="border-left-color: #f39c12;">
-                            <div class="wish-header" style="background: #f39c12;">Oops!</div>
+                            <div class="wish-header" style="background: #f39c12;">Maaf!</div>
                             <div class="message-text">
-                                <em>Unable to load messages right now. Please check your Google Sheets configuration and try again. 🔧</em>
+                                <em>Tidak dapat memuatkan ucapan sekarang. Sila semak konfigurasi Google Sheets anda dan cuba lagi. 🔧</em>
                             </div>
-                            <div class="message-author">@System_Message</div>
+                            <div class="message-author">@Mesej_Sistem</div>
                         </div>
                         <div class="message-card empty-card" style="opacity: 0.3;">
-                            <div class="wish-header">Configuration</div>
+                            <div class="wish-header">Konfigurasi</div>
                             <div class="message-text">
-                                <em>Make sure your Sheet ID and API Key are set correctly.</em>
+                                <em>Pastikan Sheet ID dan API Key ditetapkan dengan betul.</em>
                             </div>
-                            <div class="message-author">@Help_Needed</div>
+                            <div class="message-author">@Perlu_Bantuan</div>
                         </div>
                         <div class="message-card empty-card" style="opacity: 0.3;">
-                            <div class="wish-header">Support</div>
+                            <div class="wish-header">Sokongan</div>
                             <div class="message-text">
-                                <em>Check the console for detailed error messages.</em>
+                                <em>Semak console untuk mesej ralat terperinci.</em>
                             </div>
-                            <div class="message-author">@Debug_Info</div>
+                            <div class="message-author">@Info_Debug</div>
                         </div>
                     </div>
                 `;
@@ -698,25 +698,25 @@ class GuestbookCarousel {
                 this.track.innerHTML = `
                     <div class="carousel-slide">
                         <div class="message-card">
-                            <div class="wish-header">Be First!</div>
+                            <div class="wish-header">Jadilah Yang Pertama!</div>
                             <div class="message-text">
-                                <em>Be the first to leave a beautiful wish for the happy couple! Your message will appear here. 💕</em>
+                                <em>Jadilah yang pertama meninggalkan ucapan indah untuk pasangan bahagia! Ucapan anda akan muncul di sini. 💕</em>
                             </div>
-                            <div class="message-author">@First_Wisher</div>
+                            <div class="message-author">@Pengucap_Pertama</div>
                         </div>
                         <div class="message-card empty-card" style="opacity: 0.3;">
-                            <div class="wish-header">waiting...</div>
+                            <div class="wish-header">menunggu...</div>
                             <div class="message-text">
-                                <em>More wishes coming soon! ✨</em>
+                                <em>Menunggu ucapan yang seterusnya! ✨</em>
                             </div>
-                            <div class="message-author">@Future_Guests</div>
+                            <div class="message-author">@Tetamu_Masa_Depan</div>
                         </div>
                         <div class="message-card empty-card" style="opacity: 0.3;">
-                            <div class="wish-header">coming soon...</div>
+                            <div class="wish-header">akan datang...</div>
                             <div class="message-text">
-                                <em>Your beautiful messages will fill this space! 🌟</em>
+                                <em>Ucapan indah anda akan memenuhi ruang ini! 🌟</em>
                             </div>
-                            <div class="message-author">@Love_Notes</div>
+                            <div class="message-author">@Nota_Love</div>
                         </div>
                     </div>
                 `;
@@ -847,7 +847,7 @@ class GuestbookCarousel {
                     
                     // Update timer text
                     const remainingTime = Math.ceil((100 - progress) / increment * 100 / 1000);
-                    this.timerText.textContent = this.isAutoSliding ? `Next in ${remainingTime}s` : 'Paused';
+                    this.timerText.textContent = this.isAutoSliding ? `Seterusnya dalam ${remainingTime}s` : 'Paused';
                 }, 100);
             }
             
