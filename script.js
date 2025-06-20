@@ -479,140 +479,439 @@ END:VCALENDAR`;
         });
 
 
- 
-        // Modified JavaScript for auto-sliding carousel
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzLcsi5FS8xO6p4J_3dj8t3kfZi3KSomXgSjs_eMI-cylGJJ-M2zBNko0eeOHgHD5TN/exec';
+ /////////////////////////////////////////////////////////UCAPAN SLIDES///////////////////////////////////////////////////////////////////////
+class GuestbookCarousel {
+            constructor() {
+                this.currentSlide = 0;
+                this.totalSlides = 0;
+                this.isAutoSliding = true;
+                this.autoSlideInterval = 5000; // 5 seconds
+                this.intervalId = null;
+                this.progressInterval = null;
+                this.messagesData = [];
 
-        let currentSlide = 0;
-        let wishesData = [];
-        let slideInterval;
+                
+                this.track = document.getElementById('carouselTrack');
+                this.prevBtn = document.getElementById('prevBtn');
+                this.nextBtn = document.getElementById('nextBtn');
+                this.pauseBtn = document.getElementById('pauseBtn');
+                this.dotsContainer = document.getElementById('dotsContainer');
+                this.timerText = document.getElementById('timer-text');
+                this.progressBar = document.getElementById('progressBar');
+                
+                // Google Sheets configuration
+                this.SHEET_ID = '1lptM9ofvL1NvmdtDfaAM67_EIo1ySd45RxlEtCXJCNk'; // sheet ID
+                this.API_KEY = 'AIzaSyAudTvnsXpAdTOXKz7YzWe2JalqnJyfANg'; // API key
+                this.RANGE = "'Form Responses 1'!A:G"; // Fixed: Get all columns to ensure proper indexing
 
-        // Try to fetch from Google Sheets, fallback to sample data
-        fetch(scriptURL)
-            .then(res => res.json())
-            .then(data => {
-                wishesData = data && data.length > 0 ? data : sampleWishesData;
-                initializeSlider2();
-            })
-            .catch(err => {
-                console.error('Error loading from Google Sheets, using sample data:', err);
-                wishesData = sampleWishesData;
-                initializeSlider2();
-            });
-
-        function initializeSlider2() {
-            if (wishesData.length > 0) {
-                createSlider2();
-                startAutoSlide2();
-                setupEventListeners2();
+                this.init3();
             }
-        }
-
-        function createSlider2() {
-            const totalDots = Math.min(5, wishesData.length); // Don't create more dots than we have slides
             
-            let html = `
-                <div class="wishes-slider">
-                    <div class="slider-container">
-                        ${wishesData.map((entry, index) => `
-                            <div class="wish-slide ${index === 0 ? 'active' : ''}">
-                                <div class="wish-card">
-                                    <div class="wish-header">
-                                        <h3 class="wish-title">wish us! 🤗</h3>
-                                    </div>
-                                    <div class="wish-content">
-                                        <p class="wish-message">${entry.wish}</p>
-                                        <p class="wish-name">@${entry.name}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                    <div class="slider-dots">
-                        ${Array.from({ length: totalDots }).map((_, index) => `
-                            <span class="dot ${index === 0 ? 'active' : ''}" data-group="${index}"></span>
-                        `).join('')}
-                    </div>
-                </div>
-            `;
-            document.getElementById('rsvp-list').innerHTML = html;
-        }
-
-        function setupEventListeners2() {
-            // Add click event listeners to dots after they're created
-            setTimeout(() => {
-                const dots = document.querySelectorAll('.dot');
-                dots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => goToGroup2(index));
-                });
-
-                // Add hover event listeners to pause/resume auto-slide
-                const slider = document.querySelector('.wishes-slider');
-                if (slider) {
-                    slider.addEventListener('mouseenter', stopAutoSlide2);
-                    slider.addEventListener('mouseleave', startAutoSlide2);
+            init3() {
+                this.showLoadingState3();
+                this.loadGuestbookData3();
+                this.attachEventListeners3();
+                
+            }
+            
+            async loadGuestbookData3() {
+                try {
+                    const response = await fetch(
+                        `https://sheets.googleapis.com/v4/spreadsheets/${this.SHEET_ID}/values/${this.RANGE}?key=${this.API_KEY}`
+                    );
+                    
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch data from Google Sheets');
+                    }
+                    
+                    const data = await response.json();
+                    this.processSheetData3(data.values);
+                } catch (error) {
+                    console.error('Error loading guestbook data:', error);
+                    this.showErrorState3();
                 }
-            }, 100);
-        }
-
-        function goToGroup2(dotIndex) {
-            const totalDots = Math.min(5, wishesData.length);
-            const groupSize = Math.ceil(wishesData.length / totalDots);
-            const targetSlide = Math.min(dotIndex * groupSize, wishesData.length - 1);
-
-            goToSlide2(targetSlide);
-        }
-
-        function goToSlide2(slideIndex) {
-            // Ensure slideIndex is within bounds
-            if (slideIndex < 0 || slideIndex >= wishesData.length) return;
-
-            // Remove active class from current slide
-            const currentActiveSlide = document.querySelector('.wish-slide.active');
-            if (currentActiveSlide) {
-                currentActiveSlide.classList.remove('active');
             }
-
-            // Add active class to new slide
-            const slides = document.querySelectorAll('.wish-slide');
-            if (slides[slideIndex]) {
-                slides[slideIndex].classList.add('active');
+            
+            
+            processSheetData3(rows) {
+                // Stop any existing timers first
+                this.stopAutoSlide3();
+                
+                if (!rows || rows.length <= 1) {
+                    this.showEmptyState3();
+                    return;
+                }
+                
+                console.log('Processing rows:', rows); // Debug log
+                
+                // Skip header row
+                const dataRows = rows.slice(1);
+                
+                // Process each row into message objects
+                this.messagesData = dataRows
+                    .filter(row => row && row.length > 1 && row[1] && row[5])
+                    .map(row => ({
+                        name: row[1] || 'Anonymous',
+                        message: row[5] || '',
+                    }));
+                
+                console.log('Processed messages:', this.messagesData); // Debug log
+                
+                if (this.messagesData.length === 0) {
+                    this.showEmptyState3();
+                    return;
+                }
+                
+                this.createSlidesFromData3();
+                this.totalSlides = Math.ceil(this.messagesData.length / 3);
+                this.createDots3();
+                
+                // Reset to first slide
+                this.currentSlide = 0;
+                this.updateDisplay3();
+                
+                // Start auto-slides fresh
+                if (this.isAutoSliding) {
+                    this.startAutoSlides3();
+                }
             }
-
-            currentSlide = slideIndex;
-
-            // Update dots based on groups
-            const totalDots = Math.min(5, wishesData.length);
-            const groupSize = Math.ceil(wishesData.length / totalDots);
-            const activeDotIndex = Math.floor(slideIndex / groupSize);
-
-            // Update dot active status
-            document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
-            const dots = document.querySelectorAll('.dot');
-            if (dots[activeDotIndex]) {
-                dots[activeDotIndex].classList.add('active');
+            
+            createSlidesFromData3() {
+                this.track.innerHTML = ''; // Clear existing content
+                
+                // Group messages into slides of 3
+                for (let i = 0; i < this.messagesData.length; i += 3) {
+                    const slideMessages = this.messagesData.slice(i, i + 3);
+                    const slide = this.createSlide3(slideMessages);
+                    this.track.appendChild(slide);
+                }
+            }
+            
+            createSlide3(messages) {
+                const slide = document.createElement('div');
+                slide.className = 'carousel-slide';
+                
+                messages.forEach(msg => {
+                    const card = this.createMessageCard3(msg);
+                    slide.appendChild(card);
+                });
+                
+                // Fill empty slots if less than 3 messages
+                while (slide.children.length < 3) {
+                    const emptyCard = document.createElement('div');
+                    emptyCard.className = 'message-card empty-card';
+                    emptyCard.style.opacity = '0.3';
+                    emptyCard.innerHTML = `
+                        <div class="wish-header">waiting for more...</div>
+                        <div class="message-text">
+                            <em>More beautiful wishes coming soon! ✨</em>
+                        </div>
+                        <div class="message-author">@YourGuests</div>
+                    `;
+                    slide.appendChild(emptyCard);
+                }
+                
+                return slide;
+            }
+            
+            createMessageCard3(messageData) {
+                const card = document.createElement('div');
+                card.className = 'message-card';
+                
+                // Format the name to look like a username
+                const displayName = messageData.name.startsWith('@') 
+                    ? messageData.name 
+                    : `@${messageData.name.replace(/\s+/g, '_')}`;
+                
+                card.innerHTML = `
+                    <div class="wish-header">wish us!</div>
+                    <div class="message-text">"${this.escapeHtml3(messageData.message)}"</div>
+                    <div class="message-author">${this.escapeHtml3(displayName)}</div>
+                `;
+                
+                return card;
+            }
+            
+            escapeHtml3(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+            
+            showLoadingState3() {
+                this.track.innerHTML = `
+                    <div class="carousel-slide">
+                        <div class="message-card">
+                            <div class="wish-header">Loading...</div>
+                            <div class="message-text">
+                                <em>Loading beautiful wishes from our guests... 💫</em>
+                            </div>
+                            <div class="message-author">@Please_Wait</div>
+                        </div>
+                        <div class="message-card">
+                            <div class="wish-header">Loading...</div>
+                            <div class="message-text">
+                                <em>Fetching heartfelt messages... 💝</em>
+                            </div>
+                            <div class="message-author">@Almost_Ready</div>
+                        </div>
+                        <div class="message-card">
+                            <div class="wish-header">Loading...</div>
+                            <div class="message-text">
+                                <em>Preparing your guestbook... 🎉</em>
+                            </div>
+                            <div class="message-author">@Loading_Love</div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            showErrorState3() {
+                this.track.innerHTML = `
+                    <div class="carousel-slide">
+                        <div class="message-card" style="border-left-color: #f39c12;">
+                            <div class="wish-header" style="background: #f39c12;">Oops!</div>
+                            <div class="message-text">
+                                <em>Unable to load messages right now. Please check your Google Sheets configuration and try again. 🔧</em>
+                            </div>
+                            <div class="message-author">@System_Message</div>
+                        </div>
+                        <div class="message-card empty-card" style="opacity: 0.3;">
+                            <div class="wish-header">Configuration</div>
+                            <div class="message-text">
+                                <em>Make sure your Sheet ID and API Key are set correctly.</em>
+                            </div>
+                            <div class="message-author">@Help_Needed</div>
+                        </div>
+                        <div class="message-card empty-card" style="opacity: 0.3;">
+                            <div class="wish-header">Support</div>
+                            <div class="message-text">
+                                <em>Check the console for detailed error messages.</em>
+                            </div>
+                            <div class="message-author">@Debug_Info</div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            showEmptyState3() {
+                this.track.innerHTML = `
+                    <div class="carousel-slide">
+                        <div class="message-card">
+                            <div class="wish-header">Be First!</div>
+                            <div class="message-text">
+                                <em>Be the first to leave a beautiful wish for the happy couple! Your message will appear here. 💕</em>
+                            </div>
+                            <div class="message-author">@First_Wisher</div>
+                        </div>
+                        <div class="message-card empty-card" style="opacity: 0.3;">
+                            <div class="wish-header">waiting...</div>
+                            <div class="message-text">
+                                <em>More wishes coming soon! ✨</em>
+                            </div>
+                            <div class="message-author">@Future_Guests</div>
+                        </div>
+                        <div class="message-card empty-card" style="opacity: 0.3;">
+                            <div class="wish-header">coming soon...</div>
+                            <div class="message-text">
+                                <em>Your beautiful messages will fill this space! 🌟</em>
+                            </div>
+                            <div class="message-author">@Love_Notes</div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            createDots3() {
+                this.dotsContainer.innerHTML = ''; // Clear existing dots
+                for (let i = 0; i < this.totalSlides; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'dot';
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => this.goToSlide3(i));
+                    this.dotsContainer.appendChild(dot);
+                }
+            }
+            
+            // Method to refresh data from Google Sheets
+            async refreshData3() {
+                    // Stop all auto-slide activities first
+                    this.stopAutoSlide3();
+                    
+                    // Reset current slide to 0
+                    this.currentSlide = 0;
+                    
+                    // Show loading state
+                    this.showLoadingState3();
+                    
+                    // Clear existing dots
+                    this.dotsContainer.innerHTML = '';
+                    
+                    try {
+                        // Load new data
+                        await this.loadGuestbookData3();
+                    } catch (error) {
+                        console.error('Error during refresh:', error);
+                        this.showErrorState3();
+                    }
+                }
+            
+            updateDisplay3() {
+                this.track.style.transform = `translateX(-${this.currentSlide * 100}%)`;
+                
+                // Update dots
+                const dots = this.dotsContainer.querySelectorAll('.dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentSlide);
+                });
+                
+                // Update navigation buttons
+                this.prevBtn.disabled = this.currentSlide === 0;
+                this.nextBtn.disabled = this.currentSlide === this.totalSlides - 1;
+            }
+            
+            goToSlide3(slideIndex) {
+                this.currentSlide = slideIndex;
+                this.updateDisplay3();
+                this.resetAutoSlide3();
+            }
+            
+            nextSlide3() {
+                if (this.currentSlide < this.totalSlides - 1) {
+                    this.currentSlide++;
+                } else {
+                    this.currentSlide = 0; // Loop back to first slide
+                }
+                this.updateDisplay3();
+            }
+            
+            prevSlide3() {
+                if (this.currentSlide > 0) {
+                    this.currentSlide--;
+                } else {
+                    this.currentSlide = this.totalSlides - 1; // Loop to last slide
+                }
+                this.updateDisplay3();
+            }
+            
+            startAutoSlides3() {
+                if (!this.isAutoSliding) return;
+                
+                this.intervalId = setInterval(() => {
+                    this.nextSlide3();
+                }, this.autoSlideInterval);
+                
+                this.startProgressBar3();
+                this.pauseBtn.innerHTML = '⏸️ Pause';
+            }
+            
+            stopAutoSlide3() {
+                if (this.intervalId) {
+                    clearInterval(this.intervalId);
+                    this.intervalId = null;
+                }
+                if (this.progressInterval) {
+                    clearInterval(this.progressInterval);
+                    this.progressInterval = null;
+                }
+                this.progressBar.style.width = '0%';
+                this.pauseBtn.innerHTML = '▶️ Play';
+            }
+            
+            resetAutoSlide3() {
+                this.stopAutoSlide3();
+                if (this.isAutoSliding) {
+                    this.startAutoSlides3();
+                }
+            }
+            
+            toggleAutoSlide3() {
+                this.isAutoSliding = !this.isAutoSliding;
+                if (this.isAutoSliding) {
+                    this.startAutoSlides3();
+                } else {
+                    this.stopAutoSlide3();
+                }
+            }
+            
+            startProgressBar3() {
+                let progress = 0;
+                const increment = 100 / (this.autoSlideInterval / 100);
+                
+                this.progressInterval = setInterval(() => {
+                    progress += increment;
+                    if (progress >= 100) {
+                        progress = 0;
+                    }
+                    this.progressBar.style.width = progress + '%';
+                    
+                    // Update timer text
+                    const remainingTime = Math.ceil((100 - progress) / increment * 100 / 1000);
+                    this.timerText.textContent = this.isAutoSliding ? `Next in ${remainingTime}s` : 'Paused';
+                }, 100);
+            }
+            
+            attachEventListeners3() {
+                this.prevBtn.addEventListener('click', () => {
+                    this.prevSlide3();
+                    this.resetAutoSlide3();
+                });
+                
+                this.nextBtn.addEventListener('click', () => {
+                    this.nextSlide3();
+                    this.resetAutoSlide3();
+                });
+                
+                this.pauseBtn.addEventListener('click', () => {
+                    this.toggleAutoSlide3();
+                });
+                
+                // Add refresh button listener
+                const refreshBtn = document.getElementById('refreshBtn');
+                refreshBtn.addEventListener('click', () => {
+                    this.refreshData3();
+                });
+                
+                // Pause on hover
+                const container = document.querySelector('.carousel-container');
+                container.addEventListener('mouseenter', () => {
+                    if (this.isAutoSliding) {
+                        this.stopAutoSlide3();
+                    }
+                });
+                
+                container.addEventListener('mouseleave', () => {
+                    if (this.isAutoSliding) {
+                        this.startAutoSlides3();
+                    }
+                });
+                
+                // Touch/swipe support for mobile
+                let startX = 0;
+                let endX = 0;
+                
+                this.track.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                });
+                
+                this.track.addEventListener('touchend', (e) => {
+                    endX = e.changedTouches[0].clientX;
+                    const diff = startX - endX;
+                    
+                    if (Math.abs(diff) > 50) { // Minimum swipe distance
+                        if (diff > 0) {
+                            this.nextSlide3();
+                        } else {
+                            this.prevSlide3();
+                        }
+                        this.resetAutoSlide3();
+                    }
+                });
             }
         }
-
-        function nextSlide2() {
-            const nextIndex = (currentSlide + 1) % wishesData.length;
-            goToSlide2(nextIndex);
-        }
-
-        function startAutoSlide2() {
-            // Clear any existing interval first
-            if (slideInterval) {
-                clearInterval(slideInterval);
-            }
-            // Auto slide every 3 seconds
-            slideInterval = setInterval(nextSlide2, 3000);
-        }
-
-        function stopAutoSlide2() {
-            if (slideInterval) {
-                clearInterval(slideInterval);
-                slideInterval = null;
-            }
-        }
-     
+        
+        // Initialize the carousel when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new GuestbookCarousel();
+        });
         
