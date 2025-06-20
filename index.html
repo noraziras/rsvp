@@ -200,10 +200,10 @@
                     </div>
                     
                     <div class="navigation">
-                        <button class="nav-btn" id="prevBtn">‹ Previous</button>
+                        <button class="nav-btn" id="prevBtn">‹ Sebelum</button>
                         <button class="nav-btn" id="pauseBtn">⏸️ Pause</button>
                         <button class="nav-btn" id="refreshBtn">🔄 Refresh</button>
-                        <button class="nav-btn" id="nextBtn">Next ›</button>
+                        <button class="nav-btn" id="nextBtn">Seterusnya ›</button>
                     </div>
                     
                     <div class="dots-container" id="dotsContainer"></div>
@@ -237,41 +237,6 @@
 
         </div>
     </section>
-
-    <!-- TEST Details Section 
-    <section id="details" class="section">
-        <div class="container">
-            <div class="guestbook-container">
-                <div class="header">
-                    <h1>Ucapan & Doa</h1>
-                    <p class="subtitle">Wishes and Prayers from Our Beloved Guests</p>
-                </div>
-                
-                <div class="carousel-container">
-                    <div class="auto-slide-indicator">
-                        <span id="timer-text">Next in 5s</span>
-                    </div>
-                    
-                    <div class="carousel-wrapper">
-                        <div class="carousel-track" id="carouselTrack">
-             
-                        </div>
-                    </div>
-                    
-                    <div class="navigation">
-                        <button class="nav-btn" id="prevBtn">‹ Sebelum</button>
-                        <button class="nav-btn" id="pauseBtn">⏸️ Pause</button>
-                        <button class="nav-btn" id="refreshBtn">🔄 Refresh</button>
-                        <button class="nav-btn" id="nextBtn">Seterusnya›</button>
-                    </div>
-                    
-                    <div class="dots-container" id="dotsContainer"></div>
-                    
-                    <div class="progress-bar2" id="progressBar"></div>
-                </div>
-            </div>
-        </div>
-    </section>-->
 
 
 <!-------------------------------------------------------------------------------------------MODAL SECTION--------------------------------------------------------------------->
@@ -496,10 +461,10 @@
                 <div class="info-item">
                     <i class="fas fa-phone"></i>
                     <h4>Hubungi</h4>
-                    <p>Sebarang pertanyaan, hubungi:<br>
-                    Pihak Pengantin Perempuan:<br>
+                    <p>Sebarang pertanyaan, sila hubungi:<br>
+                    Noraliah:
                     <a href="tel:+60111989668">011-19896680</a><br> 
-                    Pihak Pengantin Lelaki:<br>
+                    Suriati:
                     <a href="tel:+60129876543">013-8441234</a></p>
                 </div>
             </div>
@@ -527,9 +492,13 @@
             <div class="row">
                 <div class="col-lg-10 mx-auto">
                     <div class="map-container">
-                        <div class="map-info mb-4 text-center sentence-text">
-                            <p><i class="fas fa-map-marker-alt text-danger"></i> Dewan Lakis Sibu</p>
-                            <p class="lead">Jalan Masjid, Pekan Sibu, 96000 Sibu, Sarawak</p>
+
+                         <div class="location-title">
+                            Dewan Lakis Sibu<br>
+                            Jalan Masjid, Pekan Sibu, 96000 Sibu, Sarawak
+                        </div>
+                        <div class="map-location">
+
                             <div class="d-flex justify-content-center flex-wrap gap-3 mt-3">
                                 <a href="https://www.google.com/maps/dir//LAKIS+Hall,+Jalan+Masjid,+Sibu,+96000+Sibu,+Sarawak/@2.296146,111.8207272,21z/data=!4m8!4m7!1m0!1m5!1m1!1s0x31f77fcf5b93397d:0x86fc39b2c837b215!2m2!1d111.8210442!2d2.2962856?entry=ttu&g_ep=EgoyMDI1MDYxMC4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-outline-primary">
                                     <i class="fas fa-directions"></i> Dapatkan Arah
@@ -557,16 +526,14 @@
                         <div class="location-details mt-4">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="detail-card">
-                                        <i class="fas fa-car text-primary"></i>
-                                        <h5>Parking</h5>
+                                    <div class="detail-card">              
+                                        <h5><i class="fas fa-car text-primary"></i> Parking</h5>
                                         <p>Tempat letak kereta tersedia di sekeliling dewan</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="detail-card">
-                                        <i class="fas fa-info-circle text-info"></i>
-                                        <h5>Petunjuk</h5>
+                                    <div class="detail-card">    
+                                        <h5><i class="fas fa-info-circle text-info"></i> Petunjuk</h5>
                                         <p>Dalam perkarangan masjid An-Nur</p>
                                     </div>
                                 </div>
@@ -597,21 +564,24 @@
          <div class="container">
             <div class="info-grid">
                 <div class="info-item">
-                    <h5>Nama Bank</h5>
-                    <p>Malayan Banking Berhad (Maybank)</p>
-
-                    <h5>No. Akaun</h5>
-                    <p class="account-number-simple">
-                        561015144105  
-                    </p>
+                    <h4><b>Nama Bank:</b> Malayan Banking Berhad (Maybank)</h4>                     
+                    <h4><b>No. Akaun:</b> 
+                        <span id="account-number">561832487345</span>
+                        <a href="#" onclick="copyAccountNumber(); return false;" class="copy-link">
+                            <i class="fas fa-copy"></i>
+                        </a>
+                    </h4>
+                    <!-- Toast notification -->
+                    <div id="toast" class="toast">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Copied</span>
+                    </div>
 
                     <div class="img-code">
-                    <h5>QR Code</h5>
+                    <h4><b>QR Code</b></h4>
                     <img src="img/qr-code.jpg">
                     </div>
-                </div>
-               
-                
+                </div>     
             </div>
         </div>
       </div>
