@@ -111,10 +111,32 @@
         }
 
        .lead-title{
-                font-size: 1.0rem;
+                font-size: 1.2rem;
                 margin-bottom: 30px;
                 opacity: 0.9;
+                font-weight: 400;
             }
+
+        .location-title{
+            font-size: 1.0rem;
+            text-align: center;
+        }
+
+        .map-location{
+            margin-bottom: 10px;
+        }
+
+        .detail-card h5{
+            font-size: 1.0rem;
+            font-weight: 400;
+
+        }
+
+        .detail-card p{
+            font-size: 0.8rem;
+            font-weight: 400;
+
+        }
         
         .scroll-indicator {
             position: absolute;
@@ -268,11 +290,22 @@
         
         .info-item {
             text-align: center;
-            padding: 30px;
+            padding: 18px;
             background: white;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
+        }
+
+        .info-item h4{
+            font-size: 1.0rem;
+            font-weight: 500;
+        }
+
+        .info-item p{
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
         }
         
         .info-item:hover {
@@ -280,11 +313,55 @@
         }
         
         .info-item i {
-            font-size: 2.5rem;
+            font-size: 1.3rem;
             color: #d4625c;
             margin-bottom: 20px;
         }
-        
+
+     
+        #account-number {
+            background-color: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+            border: 1px solid #e9ecef;
+        }
+
+        .toast {
+          position: absolute;
+            top: 20px;
+            left: 70%;
+            transform: translateX(-50%);
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 12px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .toast i {
+            color: #28a745;
+            font-size: 16px;
+        }
+
+        .toast span {
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+        }
         .section-title {
             text-align: center;
             font-size: 1.5rem;
@@ -745,7 +822,7 @@
 
         .calendar-month-year {
             font-size: 1.2rem;
-            font-weight: bold;
+            font-weight: 500;
             color: #333;
             margin-bottom: 10px;
         }
@@ -1145,7 +1222,7 @@
         }  
 
         .modal-title{
-            font-size: 1.3rem;
+            font-size: 1.0rem;
             font-family: "Playfair Display", serif;
             text-decoration: none;
             font-weight: 400;
