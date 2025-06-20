@@ -602,11 +602,11 @@ class GuestbookCarousel {
                     emptyCard.className = 'message-card empty-card';
                     emptyCard.style.opacity = '0.3';
                     emptyCard.innerHTML = `
-                        <div class="wish-header">waiting for more...</div>
+                        <div class="wish-header">menunggu ucapan...</div>
                         <div class="message-text">
-                            <em>More beautiful wishes coming soon! ✨</em>
+                            <em>Menunggu ucapan indah dari tetamu lain! ✨</em>
                         </div>
-                        <div class="message-author">@YourGuests</div>
+                        <div class="message-author">@TetamuKami</div>
                     `;
                     slide.appendChild(emptyCard);
                 }
@@ -914,4 +914,21 @@ class GuestbookCarousel {
         document.addEventListener('DOMContentLoaded', () => {
             new GuestbookCarousel();
         });
+
+function copyAccountNumber() {
+    const accountNumber = document.getElementById('account-number').textContent;
+    navigator.clipboard.writeText(accountNumber).then(function() {
+        showToast();
+    });
+}
+
+function showToast() {
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    
+    // Hide after 2 seconds
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 2000);
+}
         
