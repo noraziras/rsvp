@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding RSVP - Azira & Nizam</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💌</text></svg>">
+    <title> Wedding RSVP - Azira & Nizam</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -13,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
    
     <!--CSS FILE-->
     <link rel="stylesheet" type="text/css" href="style.css">   
@@ -31,7 +33,7 @@
                     <a href="#home">Utama</a>
                     <a href="#details">Butiran Majlis</a>
                     <a href="#galeri">Galeri</a>
-                    <a href="#wishes">Ucapan & Doa</a>
+                    <a href="#wishes">Ucapan</a>
                     
                 </div>
             </div>
@@ -65,8 +67,8 @@
     <section id="details" class="section">
         <div class="container">
             <h2 class="section-title">Butiran Majlis</h2>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 mb-4">
                     <div class="event-card">
                         <div class="event-icon">
                             <i class="fas fa-heart"></i>
@@ -80,7 +82,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
+                <div class="col-lg-4 mb-4">
                     <div class="event-card">
                         <div class="event-icon">
                             <i class="bi bi-card-list"></i>
@@ -91,6 +93,25 @@
                             <p><i class="bi bi-balloon-heart-fill"></i> <strong>Ketibaan Pengantin:</strong> 11:00 AM</p>
                             <p><i class="bi bi-person-raised-hand"></i> <strong>Majlis Tamat:</strong> 01:30 PM</p>
                         </div>
+                    </div>
+                </div>
+                 <div class="col-lg-8 mb-4">
+                    <div class="event-card2">
+                        <div class="doa-list" >
+                            <div class="bismillah-img">
+                                <img src="img/bismillah-img.png">
+                            </div>
+                            <h5 class="opening-doa">Dengan nama Allah Yang Maha Pengasih Lagi Maha Penyayang</h5>
+                                <div class="doa-contain">
+                                    <p>“Ya Allah Ya Tuhan Kami, Satukanlah kedua mempelai ini,</p>
+                                </div>
+                            <div class="doa-nm"> Azira & Nizam </div>
+                            <div class="doa-contain">
+                                <p>dengan keimanan dan ketaqwaan kepadaMu, jadikanlah mereka pasangan yang sentiasa berkasih sayang dan yang melaksanakan syariat agamaMu, dalam membentuk keluarga sakinah mawaddah, 
+                                warrahmah serta kurniakan mereka zuriat yang beriman, bertaqwa, beramal soleh, serta cukupkan rezeki mereka dan semoga perkahwinan mereka dilimpahi rahmatMu sehingga syurga”</p>
+                            </div>
+                
+                        </div>           
                     </div>
                 </div>
             </div>
@@ -159,29 +180,38 @@
       <!-- Ucapan Section -->
     <section id="wishes" class="section">
         <div class="container">
-            <h2 class="section-title">Ucapan & Doa</h2>
+            <h2 class="section-title">Ucapan</h2>
 
-            <div id="rsvp-list">
-                <!-- Cards will be generated here by JavaScript -->
-            </div><br>
 
-            <div class="doa-list" >
-                <div class="bismillah-img">
-                    <img src="img/bismillah-img.png">
-                </div>
-                <h5 class="opening-doa">Dengan nama Allah Yang Maha Pengasih Lagi Maha Penyayang</h5>
-                <div class="doa-contain">
-                    <p>“Ya Allah Ya Tuhan Kami, Satukanlah kedua mempelai ini,</p>
-                </div>
-                <div class="doa-nm"> Azira & Nizam </div>
-                <div class="doa-contain">
-                    <p>dengan keimanan dan ketaqwaan kepadaMu, jadikanlah mereka pasangan yang sentiasa berkasih sayang dan yang melaksanakan syariat agamaMu, dalam membentuk keluarga sakinah mawaddah, 
-                    warrahmah serta kurniakan mereka zuriat yang beriman, bertaqwa, beramal soleh, serta cukupkan rezeki mereka dan semoga perkahwinan mereka dilimpahi rahmatMu sehingga syurga”</p>
+                 <div class="guestbook-container">
+                <div class="header">
+                    <p class="subtitle">Ucapan dan Doa dari para tetamu 🤗</p>
                 </div>
                 
+                <div class="carousel-container">
+                    <div class="auto-slide-indicator">
+                        <span id="timer-text">Next in 5s</span>
+                    </div>
+                    
+                    <div class="carousel-wrapper">
+                        <div class="carousel-track" id="carouselTrack">
+                            <!-- Content will be dynamically loaded from Google Sheets -->
+                        </div>
+                    </div>
+                    
+                    <div class="navigation">
+                        <button class="nav-btn" id="prevBtn">‹ Previous</button>
+                        <button class="nav-btn" id="pauseBtn">⏸️ Pause</button>
+                        <button class="nav-btn" id="refreshBtn">🔄 Refresh</button>
+                        <button class="nav-btn" id="nextBtn">Next ›</button>
+                    </div>
+                    
+                    <div class="dots-container" id="dotsContainer"></div>
+                    
+                    <div class="progress-bar2" id="progressBar"></div>
+                </div>
             </div>
-
-                <h2 class="section-title">Countdown</h2>
+                <br><h2 class="section-title">Countdown</h2>
                           <!-- Countdown Timer -->
                 <div class="countdown-container">
                     <div class="countdown-timer">
@@ -207,6 +237,41 @@
 
         </div>
     </section>
+
+    <!-- TEST Details Section 
+    <section id="details" class="section">
+        <div class="container">
+            <div class="guestbook-container">
+                <div class="header">
+                    <h1>Ucapan & Doa</h1>
+                    <p class="subtitle">Wishes and Prayers from Our Beloved Guests</p>
+                </div>
+                
+                <div class="carousel-container">
+                    <div class="auto-slide-indicator">
+                        <span id="timer-text">Next in 5s</span>
+                    </div>
+                    
+                    <div class="carousel-wrapper">
+                        <div class="carousel-track" id="carouselTrack">
+             
+                        </div>
+                    </div>
+                    
+                    <div class="navigation">
+                        <button class="nav-btn" id="prevBtn">‹ Previous</button>
+                        <button class="nav-btn" id="pauseBtn">⏸️ Pause</button>
+                        <button class="nav-btn" id="refreshBtn">🔄 Refresh</button>
+                        <button class="nav-btn" id="nextBtn">Next ›</button>
+                    </div>
+                    
+                    <div class="dots-container" id="dotsContainer"></div>
+                    
+                    <div class="progress-bar2" id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+    </section>-->
 
 
 <!-------------------------------------------------------------------------------------------MODAL SECTION--------------------------------------------------------------------->
