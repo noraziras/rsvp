@@ -318,6 +318,11 @@
             margin-bottom: 20px;
         }
 
+      .info-item img{
+            border-radius: 20px;
+            width: 300px;
+        }
+
      
         #account-number {
             background-color: #f8f9fa;
@@ -1078,15 +1083,6 @@
         font-size: 1rem;
     }
 }
-        
-
-        /*Modal Money CSS*/
-
-        .img-code img{
-            border-radius: 20px;
-            width: 300px;
-        }
-
         
  /*GALLERY SLIDES CSS*/    
  .gallery-container {
