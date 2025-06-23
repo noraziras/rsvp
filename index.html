@@ -558,7 +558,7 @@
 
 <!-- Money Modal -->
 <div class="modal fade" id="Money-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Money Gift <i class="bi bi-coin"></i></h5>
@@ -567,25 +567,27 @@
         </button>
       </div>
       <div class="modal-body">
-         <div class="container">
-            <div class="col-lg-8 mx-auto">
-                <div class="info-item">
-                    <h4><b>Nama Bank:</b> Malayan Banking Berhad (Maybank)</h4>                     
-                    <h4><b>No. Akaun:</b> 
-                        <span id="account-number">561832487345</span>
-                        <a href="#" onclick="copyAccountNumber(); return false;" class="copy-link">
-                            <i class="fas fa-copy"></i>
-                        </a>
-                    </h4>
-                    <!-- Toast notification -->
-                    <div id="toast" class="toast">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Copied</span>
-                    </div>
+         <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
+                    <div class="info-item">
+                        <h4><b>Nama Bank:</b> Malayan Banking Berhad (Maybank)</h4>                     
+                        <h4><b>No. Akaun:</b> 
+                            <span id="account-number">561832487345</span>
+                            <a href="#" onclick="copyAccountNumber(); return false;" class="copy-link">
+                                <i class="fas fa-copy"></i>
+                            </a>
+                        </h4>
+                        <!-- Toast notification -->
+                        <div id="toast" class="toast">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Copied</span>
+                        </div>
 
-                     <h4><b>QR Code</b></h4>
-                    <img src="img/qr-code.jpg">
-                </div>     
+                        <h4><b>QR Code</b></h4>
+                        <img src="img/qr-code.jpg" alt="QR Code for Payment">
+                    </div>     
+                </div>
             </div>
         </div>
       </div>
