@@ -807,219 +807,277 @@
 
 
  /* Calendar Styling */
-      .calendar-container {
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            padding: 15px;
-            margin-bottom: 20px;
-        }
+     .calendar-container {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    overflow: hidden; /* Prevent overflow */
+}
 
-        .calendar-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+.calendar-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-        .calendar-month-year {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: #333;
-            margin-bottom: 10px;
-        }
+.calendar-month-year {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 10px;
+}
 
-        .calendar-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
+.calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
 
-        .calendar-nav button {
-            background: none;
-            border: none;
-            font-size: 1.2rem;
-            color: #666;
-            cursor: pointer;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
+.calendar-nav button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #666;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
 
-        .calendar-nav button:hover {
-            background-color: #f0f0f0;
-        }
+.calendar-nav button:hover {
+    background-color: #f0f0f0;
+}
 
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 5px;
-            margin-bottom: 20px;
-        }
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px; /* Reduced gap for mobile */
+    margin-bottom: 20px;
+    width: 100%;
+}
 
-        .calendar-day-header {
-            text-align: center;
-            font-weight: bold;
-            color: #666;
-            padding: 10px 5px;
-            font-size: 0.9rem;
-        }
+.calendar-day-header {
+    text-align: center;
+    font-weight: bold;
+    color: #666;
+    padding: 8px 2px; /* Reduced padding */
+    font-size: 0.8rem; /* Smaller font */
+}
 
-        .calendar-day {
-            aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 500;
-            position: relative;
-            min-height: 30px;
-            font-size: 1.0rem; /* add this to make text smaller */
-        }
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+    position: relative;
+    min-height: 30px;
+    font-size: 0.9rem; /* Smaller font for mobile */
+    max-width: 100%; /* Ensure it doesn't exceed container */
+}
 
-        .calendar-day:hover {
-            background-color: #f0f0f0;
-        }
+.calendar-day:hover {
+    background-color: #f0f0f0;
+}
 
-        .calendar-day.other-month {
-            color: #ccc;
-        }
+.calendar-day.other-month {
+    color: #ccc;
+}
 
-        .calendar-day.today {
-            background-color: #007bff;
-            color: white;
-        }
+.calendar-day.today {
+    background-color: #007bff;
+    color: white;
+}
 
-        .calendar-day.wedding-day {
-            background-color: #F3E5AB;
-            color: white;
-            font-weight: bold;
-            position: relative;
-        }
+.calendar-day.wedding-day {
+    background-color: #F3E5AB;
+    color: white;
+    font-weight: bold;
+    position: relative;
+}
 
-        .calendar-day.wedding-day::after {
-            content: '💍';
-            position: absolute;
-            bottom: -2px;
-            right: -2px;
-            font-size: 20px;
-        }
+.calendar-day.wedding-day::after {
+    content: '💍';
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    font-size: 12px; /* Smaller emoji */
+}
 
-        /* Public holiday styling */
-        /*.calendar-day.public-holiday {
-            background-color: #f0d6d6;
-            color: #E37383;
-            font-weight: bold;
-            position: relative;
-        }
-         .calendar-day.public-holiday::after {
-            content: 'PH';
-            position: absolute;
-            bottom: -2px;
-            right: -2px;
-            font-size: 15px;
-            color: #C41E3A;
-        }*/
+/* Tooltip styling for better holiday information display */
+.calendar-day[title] {
+    cursor: help;
+}
 
+.event-details {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
 
-        /* Tooltip styling for better holiday information display */
-        .calendar-day[title] {
-            cursor: help;
-        }
+.event-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
 
-        .event-details {
-            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
-            color: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
+.event-info i {
+    width: 20px;
+    margin-right: 10px;
+}
 
-        .event-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
+.calendar-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
-        .event-info i {
-            width: 20px;
-            margin-right: 10px;
-        }
+.btn-calendar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
 
-        .calendar-buttons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+.btn-google {
+    background: #4285f4;
+    color: white;
+}
 
-        .btn-calendar {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 15px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
+.btn-google:hover {
+    background: #3367d6;
+    color: white;
+    text-decoration: none;
+}
 
-        .btn-google {
-            background: #4285f4;
-            color: white;
-        }
+.btn-apple {
+    background: #000;
+    color: white;
+}
 
-        .btn-google:hover {
-            background: #3367d6;
-            color: white;
-            text-decoration: none;
-        }
+.btn-apple:hover {
+    background: #333;
+    color: white;
+    text-decoration: none;
+}
 
-        .btn-apple {
-            background: #000;
-            color: white;
-        }
+.btn-outlook {
+    background: #0078d4;
+    color: white;
+}
 
-        .btn-apple:hover {
-            background: #333;
-            color: white;
-            text-decoration: none;
-        }
+.btn-outlook:hover {
+    background: #106ebe;
+    color: white;
+    text-decoration: none;
+}
 
-        .btn-outlook {
-            background: #0078d4;
-            color: white;
-        }
+.modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
 
-        .btn-outlook:hover {
-            background: #106ebe;
-            color: white;
-            text-decoration: none;
-        }
+.modal-footer {
+    border-top: none;
+    padding-top: 0;
+}
 
-        .modal-header {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
+      /* Mobile-specific styles */
+@media (max-width: 768px) {
+    .modal-dialog {
+        margin: 10px;
+        max-width: calc(100% - 20px);
+    }
+    
+    .calendar-container {
+        padding: 10px;
+    }
+    
+    .calendar-month-year {
+        font-size: 1rem;
+    }
+    
+    .calendar-nav button {
+        font-size: 1rem;
+        padding: 3px 8px;
+    }
+    
+    .calendar-grid {
+        gap: 1px;
+    }
+    
+    .calendar-day-header {
+        font-size: 0.7rem;
+        padding: 5px 1px;
+    }
+    
+    .calendar-day {
+        font-size: 0.8rem;
+        min-height: 25px;
+    }
+    
+    .calendar-day.wedding-day::after {
+        font-size: 10px;
+        bottom: -1px;
+        right: -1px;
+    }
+}
 
-        .modal-footer {
-            border-top: none;
-            padding-top: 0;
-        }
-
-        @media (max-width: 576px) {
-            .calendar-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .btn-calendar {
-                justify-content: center;
-            }
-        }
+@media (max-width: 576px) {
+    .modal-dialog {
+        margin: 5px;
+        max-width: calc(100% - 10px);
+    }
+    
+    .calendar-container {
+        padding: 8px;
+        border-radius: 10px;
+    }
+    
+    .calendar-month-year {
+        font-size: 0.9rem;
+    }
+    
+    .calendar-day-header {
+        font-size: 0.65rem;
+        padding: 3px 1px;
+    }
+    
+    .calendar-day {
+        font-size: 0.75rem;
+        min-height: 22px;
+    }
+    
+    .calendar-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn-calendar {
+        justify-content: center;
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+    
+    .modal-header h5 {
+        font-size: 1rem;
+    }
+}
         
 
         /*Modal Money CSS*/
