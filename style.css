@@ -217,7 +217,7 @@
         .form-group ::placeholder{
             font-size: 0.8rem;
             color: #848884;
-            font-style: italic;
+           
         }
         
         .form-control:focus {
