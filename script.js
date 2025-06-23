@@ -802,7 +802,7 @@ class GuestbookCarousel {
                 }, this.autoSlideInterval);
                 
                 this.startProgressBar3();
-                this.pauseBtn.innerHTML = '⏸ Pause';
+                this.pauseBtn.innerHTML = '❚❚ Pause';
             }
             
             stopAutoSlide3() {
