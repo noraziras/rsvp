@@ -1588,5 +1588,27 @@
             background: #e74c3c;
             transition: width 0.1s linear;
         }
+      .info-item .contact-icon {
+        font-size:14px; ;
+        color: #007bff ;
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+      .info-item .contact-iconW {
+        font-size: 14px;;
+        color: #25D366 ;
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+      
+      .info-item .contact-icon:hover {
+        transform: scale(1.1);
+        color: #0056b3; 
+      }
+      
+      .info-item .contact-iconW:hover {
+        transform: scale(1.1);
+        color: #1ea952; 
+      }
 
  
