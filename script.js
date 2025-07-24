@@ -547,13 +547,16 @@ class GuestbookCarousel {
                 // Skip header row
                 const dataRows = rows.slice(1);
                 
-                // Process each row into message objects
+                 // Process each row into message objects
                 this.messagesData = dataRows
                     .filter(row => row && row.length > 1 && row[1] && row[5])
                     .map(row => ({
-                        name: row[1] || 'Anonymous',
+                        name: row[1] || 'Tanpa Nama',
                         message: row[5] || '',
-                    }));
+                        timestamp: row[0] || '' // Add timestamp from column A
+                    }))
+                    .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp)) // Sort by timestamp, newest first
+                    .slice(0, 15); // Limit to the 15 most recent messages
                 
                 console.log('Processed messages:', this.messagesData); // Debug log
                 
