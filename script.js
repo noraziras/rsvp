@@ -387,7 +387,7 @@ END:VCALENDAR`;
             currentSlide2 = index;
         }
 
-                // Add this function to your existing JavaScript
+                // Add this function for blurring img
         function updateBlurBackground() {
             slides.forEach((slide, index) => {
                 const bgImage = slide.getAttribute('data-bg');
@@ -395,7 +395,7 @@ END:VCALENDAR`;
             });
         }
 
-        // Call this function when the page loads (add to your existing code)
+        // Call this function when the page loads
         updateBlurBackground();
 
         function nextSlide() {
@@ -935,3 +935,4 @@ function showToast() {
     }, 2000);
 }
         
+
