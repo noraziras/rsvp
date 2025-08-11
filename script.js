@@ -18,8 +18,7 @@ window.addEventListener('load', function() {
 // RSVP Form Submission - Fixed Version
 document.getElementById('rsvpForm').addEventListener('submit', function(e) {
     // Don't prevent default - let it submit to iframe
-    // e.preventDefault(); // Remove this line
-    
+ 
     // Hide the form immediately
     document.querySelector('.rsvp-form').style.display = 'none';
     
@@ -31,7 +30,7 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
     // Reset form after a short delay
     setTimeout(() => {
         this.reset();
-    }, 500);
+    }, 300);
     
     // Auto-hide alert after 5 seconds and reset everything
     setTimeout(() => {
@@ -50,7 +49,7 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
             });
 
         }, 150); // Wait for fade out animation
-    }, 5000);
+    }, 3000);
     
 });
 
@@ -935,4 +934,5 @@ function showToast() {
     }, 2000);
 }
         
+
 
