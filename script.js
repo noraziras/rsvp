@@ -617,21 +617,31 @@ class GuestbookCarousel {
             }
             
             createMessageCard3(messageData) {
-                const card = document.createElement('div');
-                card.className = 'message-card';
-                
-                // Format the name to look like a username
-                const displayName = messageData.name.startsWith('@') 
-                    ? messageData.name 
-                    : `@${messageData.name.replace(/\s+/g, '_')}`;
-                
-                card.innerHTML = `
-                    <div class="wish-header">wish us!</div>
-                    <div class="message-text">"${this.escapeHtml3(messageData.message)}"</div>
-                    <div class="message-author">${this.escapeHtml3(displayName)}</div>
-                `;
-                
-                return card;
+                    const card = document.createElement('div');
+                    card.className = 'message-card';
+                    
+                    // Format the name to look like a username
+                    let rawName = messageData.name.startsWith('@') 
+                        ? messageData.name.slice(1) // Remove existing @
+                        : messageData.name;
+                    
+                    // Replace spaces with underscores and add @
+                    let displayName = `@${rawName.replace(/\s+/g, '_')}`;
+                    
+                    // For very long names, might want to break at underscores
+                    // This makes it more readable when wrapped
+                    if (displayName.length > 25) {
+                        // Insert zero-width spaces after underscores to allow better breaking
+                        displayName = displayName.replace(/_/g, '_\u200B');
+                    }
+                    
+                    card.innerHTML = `
+                        <div class="wish-header">wish us!</div>
+                        <div class="message-text">"${this.escapeHtml3(messageData.message)}"</div>
+                        <div class="message-author">${this.escapeHtml3(displayName)}</div>
+                    `;
+                    
+                    return card;
             }
             
             escapeHtml3(text) {
@@ -934,5 +944,6 @@ function showToast() {
     }, 2000);
 }
         
+
 
 
